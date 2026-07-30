@@ -30,6 +30,14 @@ document.getElementById('giveButton').addEventListener('click', () => {
   setTimeout(() => toast.classList.remove('show'), 3600);
 });
 
+document.getElementById('newsletterForm').addEventListener('submit', event => {
+  event.preventDefault();
+  event.currentTarget.reset();
+  toast.textContent = 'You’re on the list — welcome to Uplift!';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3600);
+});
+
 document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => {
   document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
   link.classList.add('active');
